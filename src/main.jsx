@@ -1,46 +1,55 @@
-import * as React from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import { createRoot } from "react-dom";
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
   Link,
+  Outlet, // Add Outlet import
 } from "react-router-dom";
 import Dashboard from "./Routes/Dashboard";
+import Navbar from "./Components/Navbar";
+
+const AppLayout = () => (
+  <>
+    <Navbar />
+    <Outlet /> {/* Use Outlet to render nested routes */}
+  </>
+);
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <div>
-        <h1>Hello World</h1>
-        <Link to="dashboard">Dashboard</Link><br/>
-        <Link to="patients">Patients</Link><br/>
-        <Link to="prescription">Prescription</Link><br/>
-        <Link to="appointments">Appointments</Link><br/>
-        <Link to="account">Account Details</Link><br/>
-      </div>
-    ),
-  },
-  {
-    path: "dashboard",
-    element: <Dashboard/>,
-  },
-  {
-    path: "patients",
-    element: <div>Patients</div>,
-  },
-  {
-    path: "prescription",
-    element: <div>Presciption</div>,
-  },
-  {
-    path: "appointments",
-    element: <div>Appointments</div>,
-  },
-  {
-    path: "account",
-    element: <div>Account Details</div>,
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: (
+          <div>
+            <h1>Dashboard</h1>
+          </div>
+        ),
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "patients",
+        element: <div>Patients</div>,
+      },
+      {
+        path: "prescription",
+        element: <div>Prescription</div>,
+      },
+      {
+        path: "appointments",
+        element: <div>Appointments</div>,
+      },
+      {
+        path: "account",
+        element: <div>Account Details</div>,
+      },
+    ],
   },
 ]);
 
