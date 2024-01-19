@@ -1,27 +1,20 @@
 body {
-    overflow-x: hidden;
+    overflow-x: hidden;  
 }
 
 .Patient__cont{
     background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 100%;
+    max-height: 100%;
     display: flex; 
     font-family: "Inter", sans-serif;  
     z-index: 1;  
-}
-
-.Patient__cont-main{
-    display: flex;
+    padding: 0px 40px;
     flex-direction: column;
-    width: 100%;
-    padding: 40px 40px;
 }
 
 .Patient__hr {
     border: none;
     border: 1px solid #8F001E;
-    margin-top: 0.5rem;
 }
 
 .Patient_search_add_container {
@@ -30,7 +23,6 @@ body {
     margin-top: -1rem;
     margin-left: 1px;
     flex-direction: row;
-    width: 95%;
 }
 
 .Patient_search_bar {
@@ -120,6 +112,7 @@ body {
 
 .Patient_table_main_head th {
     padding: 15px ;
+    text-indent: 1rem;
 }
 
 .Patient_table_data td {
@@ -129,6 +122,7 @@ body {
     color: #8F001E;
     font-weight: 600;
     border-bottom: 1px solid #8F001E;
+    text-indent: 1rem;
 }
 
 .Patient_table_action {
@@ -138,11 +132,12 @@ body {
 }
 
 .Patient_table_name {
-    width: 20%;
+    min-width: 40%;
+    
 }
 
 .Patient_table_age {
-    width: 10%;
+    min-width: 20%;
 }
 
 /*action styling*/
@@ -306,7 +301,6 @@ input[type="file"]::file-selector-button {
     overflow: auto;
     max-height: 700px;
     padding-right: 20px; /* Add space for the scrollbar */
-    /* Add other styles as needed */
   }
   
   /* Style the scrollbar */

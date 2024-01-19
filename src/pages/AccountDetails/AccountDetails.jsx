@@ -7,13 +7,7 @@ import AccountDetailsComponent from "../../components/AccountDetails/AccountDeta
 const AccountDetails = () => {
   return (
     <main className={Styles["AccountDetails__cont"]}>
-      <Sidebar/>
-      <div className={Styles["AccountDetails__cont-main"]}>
-        <div className={Styles["AccountDetails__cont-header"]}>
-          <Header/>
-        </div>
         <AccountDetailsComponent/> {/*Call the Component*/}
-      </div>
     </main>
   );
 };

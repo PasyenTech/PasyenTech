@@ -167,11 +167,6 @@ const Prescription = () => {
 
   return (
     <main className={Styles["Prescription__cont"]}>
-      <Sidebar />
-      <div className={Styles["Prescription__cont-main"]}>
-        <div className={Styles["Prescription__cont-header"]}>
-          <Header />
-        </div>
         <div className={Styles["Prescription__cont-column-main"]}>
           <h2>Prescription</h2>
         </div>
@@ -312,7 +307,6 @@ const Prescription = () => {
             </table>
           )}
         </div>
-      </div>
     </main>
   );
 };

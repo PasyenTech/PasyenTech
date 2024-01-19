@@ -147,11 +147,6 @@ const Patient = () => {
 
   return (
     <main className={Styles["Patient__cont"]}>
-      <Sidebar />
-      <div className={Styles["Patient__cont-main"]}>
-        <div className={Styles["Patient__cont-header"]}>
-          <Header />
-        </div>
         <div className={Styles["Patient__cont-column-main"]}>
           <h2>Patients</h2>
         </div>
@@ -276,7 +271,6 @@ const Patient = () => {
             </table>
           )}
         </div>
-      </div>
     </main>
   );
 };

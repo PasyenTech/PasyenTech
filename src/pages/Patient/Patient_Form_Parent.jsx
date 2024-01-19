@@ -7,13 +7,10 @@ import Sidebar from "../../components/Sidebar/Sidebar.jsx";
 const Patient_Form_Parent = () => {
   return (
     <main className={Styles["Patient__cont"]}>
-      <Sidebar/>
+      {/* <Sidebar/> */}
       <div className={Styles["Patient__cont-main"]}>
-        <div className={Styles["Patient__cont-header"]}>
-          <Header/>
           <h2>Add Patient Form</h2>
           <AddPatient/>
-        </div>
       </div>
     </main>
   )

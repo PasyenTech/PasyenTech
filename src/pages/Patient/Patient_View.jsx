@@ -33,10 +33,10 @@ const Patient_View = () => {
 
   return (
     <main className={Styles["Patient__cont"]}>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className={Styles["Patient__cont-main"]}>
         <div className={Styles["Patient__cont-header"]}>
-          <Header />
+          {/* <Header /> */}
         </div>
         <div className={Styles["Patient__cont-column-main"]}>
           <h2 className={Styles["Patient__h2"]}>View Patient</h2>

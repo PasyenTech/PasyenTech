@@ -45,11 +45,6 @@ const Dashboard = ({ userData }) => {
 
   return (
     <main className={Styles["Dashboard__cont"]}>
-      <Sidebar />
-      <div className={Styles["Dashboard__cont-main"]}>
-        <div className={Styles["Dashboard__cont-header"]}>
-          <Header />
-        </div>
         <div className={Styles["Dashboard__cont-column-main"]}>
           <div className={Styles["Dashboard__cont-column"]}>
             {user && (
@@ -82,7 +77,6 @@ const Dashboard = ({ userData }) => {
             </button>
           </span>
         </div>
-      </div>
     </main>
   );
 };

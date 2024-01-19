@@ -1,9 +1,29 @@
+// PrivateRoute.jsx
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { auth } from "../src/config/firebase";
+import Sidebar from "./components/Sidebar/Sidebar.jsx";
+import Header from "./components/Header/Header.jsx";
 
-const PrivateRoute = ({ element }) => {
+const PrivateRoute = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const Styles = {
+    Dashboardheader: {
+      zIndex:"1",
+      backgroundColor: "rgb(255, 255, 255)",
+      display: "flex",
+      position: "fixed",  
+      top:"0", 
+      bottom: "0",
+    },
+    
+    PagesContainer:{
+      backgroundColor: "rgb(255, 255, 255)",
+      height:"100%",
+      overflowY: "scroll",
+    },
+  };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -13,13 +33,24 @@ const PrivateRoute = ({ element }) => {
     return () => unsubscribe();
   }, []);
 
-  return isLoggedIn
-    ? React.cloneElement(element, { user: auth.currentUser })
-    : element;
+  
+return isLoggedIn ? (
+    <>
+    <div style={Styles.Dashboardheader}>
+      <Sidebar />
+       
+        <div style={Styles.PagesContainer}>
+        <Header/>
+        {children}
+        </div>
+      </div>
+
+    </>
+  ) : null;
 };
 
 PrivateRoute.propTypes = {
-  element: PropTypes.node,
+  children: PropTypes.node,
 };
 
 export default PrivateRoute;

@@ -1,3 +1,4 @@
+// App.jsx
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,33 +30,36 @@ const App = () => {
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<Signup />} />
 
-          {/*Patient-related routing*/}
-          <Route path="/patient" element={<Patient />} />
-          <Route path="/patient/add-patient-form" element={<PatientForm_Parent/>}/>
-          <Route path="/patient/view-patient/:id" element={<Patient_View/>}/>
-
-          {/*Prescription-related routing*/}
-          <Route path="/prescription" element={<Prescription />} />
-          <Route path="/prescription/add-prescription-form" element={<Prescription_Form_Parent/>}/>
-          <Route path="/prescription/view-prescription/:id" element={<Prescription_View/>}/>
-          <Route path="/prescription/view-prescription/print/:id" element={<Prescription_Print/>}/>
-          
-          {/*Appointment-related routing*/}
-          <Route path="/appointment" element={<Appointment />} />
-          <Route path="/appointment/add-appointment-form" element={<Appointment_Form_Parent/>}/>
-          <Route path="/appointment/view-appointment/:id" element={<Appointment_View/>}/>
-
-          {/*Account details-related routing*/}
-          <Route path="/account-details" element={<AccountDetails />} />
-          {/* Add the closing parenthesis here */}
+          {/* PrivateRoute handles the authentication and renders Sidebar */}
           <Route
             path="/dashboard"
-            element={<PrivateRoute element={<Dashboard/>} />}
+            element={<PrivateRoute>{<Dashboard/>}</PrivateRoute>}
           />
+
+         {/*Patient-related routing*/}
+          <Route path="/patient/*" element={<PrivateRoute><Patient /></PrivateRoute>}/>
+          <Route path="/patient/add-patient-form" element={<PrivateRoute> <PatientForm_Parent/></PrivateRoute>}/>
+          <Route path="/patient/view-patient/:id" element={ <PrivateRoute> <Patient_View/> </PrivateRoute>}/>
+          
+          {/*Prescription-related routing*/}
+          <Route path="/prescription" element={<PrivateRoute><Prescription /></PrivateRoute>} />
+          <Route path="/prescription/add-prescription-form" element={<PrivateRoute><Prescription_Form_Parent/></PrivateRoute>}/>
+          <Route path="/prescription/view-prescription/:id" element={<PrivateRoute><Prescription_View/></PrivateRoute>}/>
+          <Route path="/prescription/view-prescription/print/:id" element={<PrivateRoute><Prescription_Print/></PrivateRoute>}/>
+
+          {/*Appointment-related routing*/}
+          <Route path="/appointment" element={<PrivateRoute><Appointment /></PrivateRoute>} />
+          <Route path="/appointment/add-appointment-form" element={<PrivateRoute><Appointment_Form_Parent/></PrivateRoute>}/>
+          <Route path="/appointment/view-appointment/:id" element={<PrivateRoute><Appointment_View/></PrivateRoute>}/>
+
+          {/*Account details-related routing*/}
+          <Route path="/account-details" element={<PrivateRoute><AccountDetails /></PrivateRoute>} />
+
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </div>
     </Router>
   );
 };
+
 export default App;

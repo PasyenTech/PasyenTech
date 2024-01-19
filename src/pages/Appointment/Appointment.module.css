@@ -4,19 +4,13 @@ body {
 
 .Appointment__cont{
     background-color: rgb(255, 255, 255);
-    width: 100%;
     height: 100%;
     display: flex; 
     font-family: "Inter", sans-serif;  
     z-index: 1;  
-    /* border: 1px solid  #8F001E; */
-}
-
-.Appointment__cont-main{
-    display: flex;
+    padding: 60px 40px;
     flex-direction: column;
-    width: 100%;
-    padding: 40px 40px;
+    /* border: 1px solid  #8F001E; */
 }
 
 .Appointment__hr {

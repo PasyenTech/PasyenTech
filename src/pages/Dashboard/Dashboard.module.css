@@ -8,7 +8,7 @@ body {
     display: flex; 
     font-family: "Inter", sans-serif;  
     z-index: 1;  
-}
+}     
 
 /* for hello user */
 .Dashboard__cont-helloUser{
@@ -20,14 +20,6 @@ body {
     padding: 0px 0px 10px 10px;
     font-size: 14px;
 }
-
-.Dashboard__cont-main{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 40px 40px;
-}
-
 .Dashboard__cont-text, .Dashboard__cont-text__h1, .Dashboard__cont-text__p2{
     padding-left: 10px;
 }
@@ -50,6 +42,8 @@ body {
 .Dashboard__cont-column-main{
     display: flex;
     flex-wrap: wrap;
+    padding: 2.5rem;
+
 }
 
 .DashboardNotes_note__textarea{

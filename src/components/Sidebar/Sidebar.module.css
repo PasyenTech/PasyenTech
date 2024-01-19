@@ -5,7 +5,7 @@
     background-color: #8F001E;
     transition: width 1s; /*styling to toggle sidebar*/
     min-height: 100vh;
-    width: 400px;
+    width: 300px;
 } 
 
 .arrow-btn:hover{
@@ -14,17 +14,18 @@
 
 .Sidebar.open {
     max-width: 490px;
+    padding: 0 1rem;
     .arrow-btn{
         background-color: #8F001E;
         color: white;
         align-self: flex-end;
         margin-top: 6rem;
-        padding-right: 1.0rem;
+        z-index: 1;
     }
 }
 
 .Sidebar.closed {
-    width: 125px;
+    width: 115px;
     .arrow-btn{
         background-color: #8F001E;
         align-self: center;

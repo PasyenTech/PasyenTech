@@ -170,11 +170,6 @@ const Appointment = () => {
 
   return (
     <main className={Styles["Appointment__cont"]}>
-      <Sidebar />
-      <div className={Styles["Appointment__cont-main"]}>
-        <div className={Styles["Appointment__cont-header"]}>
-          <Header />
-        </div>
         <div className={Styles["Appointment__cont-column-main"]}>
           <h2>Appointments</h2>
         </div>
@@ -321,7 +316,6 @@ const Appointment = () => {
             </table>
           )}
         </div>
-      </div>
     </main>
   );
 };
